@@ -73,15 +73,16 @@ test('getSecondsLoaded()', t => {
 test('render()', t => {
   const style = { width: '100%', height: '100%' }
   const wrapper = shallow(<Kaltura url={TEST_URL} />)
+
   t.true(wrapper.contains(
     <iframe
+      allow="encrypted-media;autoplay"
+      allowFullScreen={true}
+      frameBorder="0"
+      referrerPolicy="no-referrer-when-downgrade"
+      scrolling="no"
       src={TEST_URL}
-      frameBorder='0'
-      scrolling='no'
       style={style}
-      allowFullScreen
-      allow='encrypted-media'
-      referrerPolicy='no-referrer-when-downgrade'
-    />
+    />,
   ))
 })
